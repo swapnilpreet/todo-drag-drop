@@ -12,10 +12,12 @@ function App() {
   const [tasks, settasks] = useState([]);
 
   useEffect(() => {
-    settasks(JSON.parse(localStorage.getItem("tasks")));
+    const data=JSON.parse(localStorage.getItem("tasks")) || [] 
+    console.log(data,'data');
+    settasks(data);
   }, []);
 
-  console.log(tasks)
+  console.log("home",tasks)
   return (
     <DndProvider backend={HTML5Backend}>
       <Toaster />

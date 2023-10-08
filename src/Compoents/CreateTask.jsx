@@ -16,6 +16,7 @@ const CreateTask = ({ tasks, settasks }) => {
     if(task?.name.length < 3 ) return toast.error('A task must have more than 3 characters')
     if(task?.name.length > 100 ) return toast.error('A task must not be more than 100 characters')
    
+    console.log('rev')
     settasks((prev) => {
       const list = [...prev, task];
       localStorage.setItem('tasks', JSON.stringify(list));
